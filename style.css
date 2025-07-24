@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(bck2.jpg);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 500px;
+  min-height: 400px;
+  background-color: rgba(255, 255, 255, 0.06); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  gap: 20px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border-color: rgba(178, 34, 34, 0.3);
+  box-shadow: 
+    0 0 30px rgba(255, 77, 77, 0.6),
+    0 0 60px rgba(255, 0, 0, 0.4),
+    0 0 90px rgba(178, 34, 34, 0.3);
+}
+
+h1 {
+  color: #ff4d4d;
+  font-size: clamp(28px, 5vw, 40px);
+  text-shadow: 2px 2px 5px #000000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.textboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 85%;
+  max-width: 350px;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: #ffffff;
+  outline: none;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #b22222;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px #ff4d4d;
+}
+
+.remember {
+  width: 85%;
+  max-width: 350px;
+  color: #dddddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.forgot-password {
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-left: 15px; /* Add some spacing */
+}
+
+input[type="checkbox"] {
+  accent-color: #b22222;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+label {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  margin-left: 5px;
+}
+
+label:hover {
+  color: #ff4d4d;
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  width: 120px;
+  height: 42px;
+  border: none;
+  border-radius: 6px;
+  background-color: #b22222;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #ff4d4d;
+  box-shadow: 0 0 12px #ff4d4d;
+  transform: scale(1.05);
+}
+
+p {
+  color: #cccccc;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-align: center;
+}
+
+p:hover {
+  text-decoration: underline;
+  color: #ff4d4d;
+}
+
+/* Tablet Styles */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .card {
+    width: 70%;
+    height: 60%;
+    gap: 25px;
+  }
+  
+  .textboxes {
+    width: 70%;
+  }
+  
+  .remember {
+    width: 70%;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 599px) {
+  .card {
+    width: 90%;
+    height: auto;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+  
+  .textboxes {
+    width: 90%;
+    gap: 12px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .remember {
+    width: 90%;
+    font-size: 13px; /* Slightly smaller font on mobile */
+  }
+  
+  .forgot-password {
+    margin-left: 10px; /* Reduce spacing on mobile */
+  }
+  
+  button {
+    width: 100px;
+    height: 38px;
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 350px) {
+  .card {
+    padding: 20px 15px;
+  }
+  
+  h1 {
+    font-size: 26px;
+  }
+  
+  .textboxes,
+  .remember {
+    width: 95%;
+  }
+  
+  .remember {
+    font-size: 12px;
+  }
+  
+  .forgot-password {
+    margin-left: 8px; 
+  }
+}
